@@ -3,16 +3,16 @@ let confirmation = true;
 let counter1 = 0;
 
 function sum(numeros) {
-  let plus = 0;
-  for (num in numeros) {
-    plus += numeros[num];
+  let plus = numeros[0];
+  for (let i = 1; i < numeros.length; i += 1) {
+    plus += numeros[i];
   }
   return plus;
 }
 
 function substract(numeros) {
   let minus = numeros[0];
-  for (i = 1; i < numeros.length; i++) {
+  for (let i = 1; i < numeros.length; i += 1) {
     minus -= numeros[i];
   }
   return minus;
@@ -20,7 +20,7 @@ function substract(numeros) {
 
 function multiplication(numeros) {
   let mult = numeros[0];
-  for (i = 1; i < numeros.length; i++) {
+  for (let i = 1; i < numeros.length; i += 1) {
     mult *= numeros[i];
   }
   return mult;
@@ -28,7 +28,7 @@ function multiplication(numeros) {
 
 function division(numeros) {
   let divi = numeros[0];
-  for (i = 1; i < numeros.length; i++) {
+  for (let i = 1; i < numeros.length; i += 1) {
     divi /= numeros[i];
   }
   return divi;
@@ -38,10 +38,11 @@ do {
   do {
     do {
       numbers[counter1] = parseInt(
-        prompt("Ingresa el operador numero " + (counter1 + 1))
+        prompt(`Ingresa el operador numero ${counter1 + 1}`),
+        10
       );
-    } while (isNaN(numbers[counter1]));
-    counter1++;
+    } while (Number.isNaN(numbers[counter1]));
+    counter1 += 1;
     if (window.confirm("Quieres añadir otro operador?")) {
       confirmation = true;
     } else {
