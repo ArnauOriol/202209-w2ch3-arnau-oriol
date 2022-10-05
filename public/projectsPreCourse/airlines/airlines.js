@@ -16,7 +16,7 @@ let userName;
 function logIn(nameUser) {
   do {
     userName = prompt("Introduzca su nombre de usuario: ");
-  } while (typeof nameUser !== "string" || nameUser === "");
+  } while (typeof userName !== "string" || userName === "");
   console.log(`Bienvenido/a ${nameUser}`);
   return nameUser;
 }
